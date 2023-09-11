@@ -21,14 +21,14 @@
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <header class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-28 pt-14">
                     {{ $header }}
                 </div>
             </header>
 
             <!-- Page Content -->
-            <main>
+            <main class="-mt-28">
                 {{ $slot }}
             </main>
         </div>
