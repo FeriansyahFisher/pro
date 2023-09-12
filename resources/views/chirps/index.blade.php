@@ -57,7 +57,7 @@
                                         </x-dropdown>
                                     @endif
                                 </div>
-                                <p class="mt-4 text-lg text-gray-900">{{ nl2br($chirp->message) }}</p>
+                                <p class="mt-4 text-lg text-gray-900">{!! nl2br(e($chirp->message)) !!}</p>
                             </div>
                         </div>
                     @endforeach

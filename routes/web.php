@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ChirpController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store', 'edit', 'update', 'destroy'])
-    ->middleware(['auth', 'verified']);
+->only(['index', 'store', 'edit', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
+
+Route::resource('account', AccountController::class)
+->only(['index'])
+->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
