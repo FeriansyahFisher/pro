@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
                 <div class="relative overflow-x sm:rounded-lg">
-                    <table class="w-full text-sm text-left">
+                    <table id="table" class="w-full text-sm text-left">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
@@ -22,7 +22,7 @@
                                     E-mail
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    CReated Ata
+                                    Created At
                                 </th>
                             </tr>
                         </thead>
@@ -46,3 +46,6 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+    $("#table").DataTable()
+</script>
