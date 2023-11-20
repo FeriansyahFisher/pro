@@ -64,5 +64,24 @@
             </div>
         </div>
     </div>
+
+    <div class="content quote-homepage max-w-7xl mx-auto text-center py-30 md:py-40">
+        <h2 class="text-4xl md:text-6xl italic font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-pink-700">Test your skills with thousands High Quality Questions</h2>
+    </div>
+    <hr
+    class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100" />
+    <div class="content quote-homepage max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-5">
+            <div>
+                <span class="text-5xl"><i class="fas fa-book"></i></span>
+            </div>
+            <div>
+                <h2 class="text-2xl text-center md:text-4xl italic font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-pink-700">Awesome Secret Recipe of Learning</h2>
+            </div>
+        </div>
+
+    </div>
+    <hr
+    class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100" />
 </body>
 </html>
