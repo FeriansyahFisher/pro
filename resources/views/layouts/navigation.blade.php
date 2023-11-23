@@ -43,6 +43,10 @@
 
                         <x-slot name="content">
                             <!-- Authentication -->
+                            <x-responsive-nav-link :href="route('profil.index')">
+                                {{ __('Profil') }}
+                            </x-responsive-nav-link>
+                            <hr>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
@@ -106,6 +110,10 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
+                    <x-responsive-nav-link :href="route('profil.index')">
+                        {{ __('Profil') }}
+                    </x-responsive-nav-link>
+                    <hr>
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">

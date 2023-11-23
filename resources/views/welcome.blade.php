@@ -76,10 +76,10 @@
                 <span class="text-5xl"><i class="fas fa-book"></i></span>
             </div>
             <div>
-                <h2 class="text-2xl text-center md:text-4xl italic font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-pink-700">Awesome Secret Recipe of Learning</h2>
+                <h2 class="text-2xl text-center md:text-4xl italic font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-pink-700">Awesome Quiz and Test System</h2>
+                <p>Ikuti simulasi ujian online dengan navigasi cerdik dan nyaman</p>
             </div>
         </div>
-
     </div>
     <hr
     class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100" />

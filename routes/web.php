@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ChirpController;
+use App\Http\Controllers\UserProfilController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,10 @@ Route::resource('chirps', ChirpController::class)
 
 Route::resource('account', AccountController::class)
 ->only(['index'])
+->middleware(['auth', 'verified']);
+
+Route::resource('profil', UserProfilController::class)
+->only(['index', 'update'])
 ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
