@@ -2,38 +2,88 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserProfil;
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class UserProfilController extends Controller
 {
-    public function index():View{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index():View
+    {
         return view('profil.index', [
-            'id' => Auth::id(),
-            'user' => Auth::user()
+            "user" => UserProfil::with('user')->oldest()->get(),
         ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\UserProfil  $userProfil
+     * @return \Illuminate\Http\Response
+     */
+    public function show(UserProfil $userProfil)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\UserProfil  $userProfil
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(UserProfil $userProfil)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $chirp
+     * @param  \App\Models\UserProfil  $userProfil
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user) : RedirectResponse {
-        $this -> authorize('update', $user);
+    public function update(Request $request, UserProfil $userProfil)
+    {
+        //
+    }
 
-        $validated = $request->validate([
-            "email" => "required|string|max:255"
-        ]);
-
-        $user->update($validated);
-
-        return redirect(route('profil.index'));
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\UserProfil  $userProfil
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(UserProfil $userProfil)
+    {
+        //
     }
 }

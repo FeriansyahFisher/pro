@@ -33,8 +33,8 @@ Route::resource('account', AccountController::class)
 ->only(['index'])
 ->middleware(['auth', 'verified']);
 
-Route::resource('profil', UserProfilController::class)
-->only(['index', 'update'])
+Route::resource('user_profil', UserProfilController::class)
+->only(['index', 'store'])
 ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

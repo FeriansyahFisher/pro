@@ -11,13 +11,24 @@
             <h3 class="text-2xl my-5"> Nama Agan Disini</h3>
         </div>
 
-        <form method="POST" action="{{ route('profil.update', $user->id) }}">
+        @foreach ($user as $data)
+        @endforeach
+
+        <form method="POST" action="">
             @csrf
             @method('patch')
             <div id="user-data" class="grid lg:grid-cols-3 grid-cols-1 gap-4">
                 <div>Email</div>
                 <div class="col-span-2">
-                    <x-input name="email" type="email" value="{{ $user->email }}" class="w-full"></x-input>
+                    <x-input name="email" type="email" value="{{ $data->nama }}" class="w-full"></x-input>
+                </div>
+                <div>Jenis Kelamin</div>
+                <div class="col-span-2">
+                    <x-input name="email" type="email" value="{{ $data->jenkel }}" class="w-full"></x-input>
+                </div>
+                <div>Alamat</div>
+                <div class="col-span-2">
+                    <x-input name="email" type="email" value="{{ $data->user->email }}" class="w-full"></x-input>
                 </div>
             </div>
             <br>
