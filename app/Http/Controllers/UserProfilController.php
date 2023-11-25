@@ -91,7 +91,7 @@ class UserProfilController extends Controller
      */
     public function update(Request $request, UserProfil $userProfil) : RedirectResponse
     {
-        $this->authorize('update', $userProfil);
+        // $this->authorize('update', $userProfil);
 
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
@@ -104,7 +104,7 @@ class UserProfilController extends Controller
 
         $userProfil->update($validated);
 
-        return redirect(route('profil.index'));
+        return redirect(route('user_profil.index'));
     }
 
     /**

@@ -10,11 +10,14 @@
     <x-slot name="content">
         <img src="{{ asset('images/profil/profil-pic.png') }}" style="height:200px; width:200px" class="mx-auto" alt="Profil Image">
         <div id="profil-name" class="text-center">
-            <h3 class="text-2xl my-5">{{ isset($profil->nama) ? $profil->nama : $akun->email }}</h3>
+            <h3 class="text-2xl my-5">{{ isset($profil->id) ? $profil->nama : $akun->email }}</h3>
         </div>
 
-        <form method="POST" action="{{ route("user_profil.store") }}">
+        <form method="POST" action="{{ isset($profil->id) ? route("user_profil.update", $profil): route("user_profil.store") }}">
             @csrf
+            @if (isset($profil->id))
+                @method('patch')
+            @endif
             <div id="user-akun" class="grid lg:grid-cols-3 grid-cols-1 gap-4">
                 <div>Nama Agan</div>
                 <div class="col-span-2">
@@ -34,7 +37,7 @@
                 </div>
                 <div>Alamat</div>
                 <div class="col-span-2">
-                    <x-input name="alamat" type="text" value="{{ isset($profil->nama) ? $profil->nama : '' }}" class="w-full"></x-input>
+                    <x-input name="alamat" type="text" value="{{ isset($profil->alamat) ? $profil->alamat : '' }}" class="w-full"></x-input>
                 </div>
                 <div>No Telp</div>
                 <div class="col-span-2">
