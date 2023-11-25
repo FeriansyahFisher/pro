@@ -19,6 +19,7 @@ class UserProfilController extends Controller
     public function index():View
     {
         return view('profil.index', [
+            "user_profil" => UserProfil::with('user')->get(),
             "user" => User::with('user_profil')->get(),
         ]);
     }
