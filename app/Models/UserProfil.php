@@ -12,6 +12,7 @@ class UserProfil extends Model
         'tgl_lahir',
         'jenkel',
         'alamat',
+        'nama',
         'no_telp',
         'pic',
     ];

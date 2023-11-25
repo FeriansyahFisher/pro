@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\UserProfil;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -17,7 +19,7 @@ class UserProfilController extends Controller
     public function index():View
     {
         return view('profil.index', [
-            "user" => UserProfil::with('user')->oldest()->get(),
+            "user" => User::with('user_profil')->get(),
         ]);
     }
 
@@ -39,7 +41,18 @@ class UserProfilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'jenkel' => 'required|string|max:255',
+            'alamat' => 'required|string|max:255',
+            'tgl_lahir' => 'required|string|max:255',
+            'no_telp' => 'required|string|max:255',
+            'pic' => 'required|string|max:255',
+        ]);
+
+        $request->user()->user_profil()->create($validated);
+
+        return redirect(route('user_profil.index'));
     }
 
     /**
@@ -61,7 +74,11 @@ class UserProfilController extends Controller
      */
     public function edit(UserProfil $userProfil)
     {
-        //
+        $this->authorize('update', $userProfil);
+
+        return view('user_profil.edit', [
+            "user" => $userProfil
+        ]);
     }
 
     /**
@@ -71,9 +88,22 @@ class UserProfilController extends Controller
      * @param  \App\Models\UserProfil  $userProfil
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserProfil $userProfil)
+    public function update(Request $request, UserProfil $userProfil) : RedirectResponse
     {
-        //
+        $this->authorize('update', $userProfil);
+
+        $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'jenkel' => 'required|string|max:255',
+            'alamat' => 'required|string|max:255',
+            'tgl_lahir' => 'required|string|max:255',
+            'no_telp' => 'required|string|max:255',
+            'pic' => 'required|string|max:255',
+        ]);
+
+        $userProfil->update($validated);
+
+        return redirect(route('profil.index'));
     }
 
     /**

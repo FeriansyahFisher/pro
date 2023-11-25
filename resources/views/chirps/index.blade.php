@@ -16,9 +16,6 @@
             <x-button class="mt-4">{{ __('Chirp') }}</x-button>
         </form>
     
-        <pre>
-            {{ print_r($chirps) }}
-        </pre>
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
             @foreach ($chirps as $chirp)
                 <div class="p-6 flex space-x-2">
